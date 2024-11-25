@@ -52,7 +52,7 @@ const switchPlayer = function() {
 // Rolling dice functionality
 btnRoll.addEventListener('click', function(){
     if (playing){
-        // 1. Generating a random dice roll
+    // 1. Generating a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
     console.log(dice);
     // 2. Displaying the dice
@@ -63,7 +63,6 @@ btnRoll.addEventListener('click', function(){
         // Add dice to current score
         currentScore += dice;
         document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-
     } else {
         // Switch to the next player
         switchPlayer();
