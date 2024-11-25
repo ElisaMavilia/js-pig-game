@@ -14,16 +14,11 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// Starting Conditions
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
-
 // Declaring variables outside the init scope
 let scores, activePlayer, currentScore, playing;
     
 const init = function() {
-    // Internal conditions
+    // Internal starting conditions
      scores = [0, 0];
      activePlayer = 0;
      currentScore = 0;
@@ -78,7 +73,7 @@ btnRoll.addEventListener('click', function(){
 
 btnHold.addEventListener('click', function(){
     if (playing){
-        //console.log('Hold button');
+    //console.log('Hold button');
     // 1. Add current score to the Active player score
     scores[activePlayer] += currentScore;
     //console.log(scores[activePlayer]);
@@ -92,11 +87,11 @@ btnHold.addEventListener('click', function(){
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     } else {
-        // Switch Player
         switchPlayer();
     }
 })
 
+// Resetting the initial condition
 btnNew.addEventListener('click', init); // calling the function init as an addEventListener argument
 
 
